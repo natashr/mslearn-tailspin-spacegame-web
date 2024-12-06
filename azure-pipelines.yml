@@ -1,3 +1,8 @@
 pool: default
 steps:
 - bash: echo hello world
+- task: DockerCompose@1
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerComposeFile: '**/docker-compose.yml'
+    action: 'Run a Docker Compose command'
